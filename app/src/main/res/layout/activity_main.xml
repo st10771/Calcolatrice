@@ -18,6 +18,7 @@
         android:gravity="end"
         android:padding="16dp"
         android:text="0"
+        android:textColor="#EBD9D9"
         android:textSize="28sp" />
 
     <ImageView
@@ -26,7 +27,7 @@
         android:layout_height="120dp"
         android:layout_marginBottom="16dp"
         android:baselineAligned="false"
-        android:src="@drawable/img_portrait"
+        android:src="@drawable/olimpia_coppa"
         tools:srcCompat="@drawable/olimpia_coppa" />
 
     <GridLayout
