@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgLandscape"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/img_landscape"
+        tools:srcCompat="@drawable/olimpia_coppa" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="26sp"
+            android:gravity="end"
+            android:background="#DDDDDD"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="6">
+
+            <!-- Funzioni scientifiche -->
+            <Button android:id="@+id/log10" android:text="log10"/>
+            <Button android:id="@+id/potenza" android:text="x^y"/>
+            <Button android:id="@+id/radice" android:text="√"/>
+            <Button android:id="@+id/reciproco" android:text="1/x"/>
+            <Button android:id="@+id/fattoriale" android:text="x!"/>
+            <Button android:id="@+id/cancella" android:text="C"/>
+
+            <!-- Numeri e operazioni base -->
+            <Button android:id="@+id/t7" android:text="7"/>
+            <Button android:id="@+id/t8" android:text="8"/>
+            <Button android:id="@+id/t9" android:text="9"/>
+            <Button android:id="@+id/divisione" android:text="÷"/>
+            <Button android:id="@+id/moltiplicazione" android:text="×"/>
+            <Button android:id="@+id/meno" android:text="-"/>
+
+            <Button android:id="@+id/t4" android:text="4"/>
+            <Button android:id="@+id/t5" android:text="5"/>
+            <Button android:id="@+id/t6" android:text="6"/>
+            <Button android:id="@+id/piu" android:text="+"/>
+            <Button android:id="@+id/t1" android:text="1"/>
+            <Button android:id="@+id/t2" android:text="2"/>
+
+            <Button android:id="@+id/t3" android:text="3"/>
+            <Button android:id="@+id/t0" android:text="0"/>
+            <Button android:id="@+id/punto" android:text="."/>
+            <Button android:id="@+id/uguale" android:text="="/>
+
+        </GridLayout>
+    </LinearLayout>
+
+</LinearLayout>
