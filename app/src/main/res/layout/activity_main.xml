@@ -8,7 +8,18 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Display con margini laterali per non toccare i bordi -->
+    <!-- Immagine spostata in alto -->
+    <ImageView
+        android:id="@+id/imgPortrait"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/olimpia_coppa"
+        android:scaleType="fitCenter"
+        tools:srcCompat="@drawable/olimpia_coppa" />
+
+    <!-- Display sotto l'immagine -->
     <TextView
         android:id="@+id/display"
         android:layout_width="match_parent"
@@ -26,16 +37,7 @@
         android:maxLines="1"
         android:ellipsize="end" />
 
-    <ImageView
-        android:id="@+id/imgPortrait"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
-        android:layout_weight="1.2"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/olimpia_coppa"
-        android:scaleType="fitCenter"
-        tools:srcCompat="@drawable/olimpia_coppa" />
-
+    <!-- Tastiera -->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
