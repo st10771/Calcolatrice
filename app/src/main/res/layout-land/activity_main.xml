@@ -7,71 +7,76 @@
     android:orientation="horizontal"
     android:background="#0AA1AF"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/imgLandscape"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/olimpia_coppa"
+        android:scaleType="fitCenter"
         tools:srcCompat="@drawable/olimpia_coppa" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8.5"
         android:orientation="vertical"
         android:gravity="center">
 
-        <!-- Display corretto per visibilità -->
+        <!-- Display adattabile -->
         <TextView
             android:id="@+id/display"
-            android:layout_width="450dp"
-            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
             android:text="0"
             android:textColor="#EBD9D9"
-            android:textSize="32sp"
+            android:textSize="36sp"
             android:gravity="center_vertical|end"
             android:background="#061240"
             android:padding="12dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:maxLines="1"
             android:ellipsize="end" />
 
         <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
             android:background="#051E5D"
-            android:padding="4dp"
+            android:padding="2dp"
             android:columnCount="6">
 
             <!-- Funzioni scientifiche -->
-            <Button android:id="@+id/log10" android:text="log10" android:layout_margin="1dp"/>
-            <Button android:id="@+id/potenza" android:text="x^y" android:layout_margin="1dp"/>
-            <Button android:id="@+id/radice" android:text="√" android:layout_margin="1dp"/>
-            <Button android:id="@+id/reciproco" android:text="1/x" android:layout_margin="1dp"/>
-            <Button android:id="@+id/fattoriale" android:text="x!" android:layout_margin="1dp"/>
-            <Button android:id="@+id/cancella" android:text="C" android:layout_margin="1dp"/>
+            <Button android:id="@+id/log10" android:text="log10" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/potenza" android:text="x^y" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/radice" android:text="√" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/reciproco" android:text="1/x" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/fattoriale" android:text="x!" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/cancella" android:text="C" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
 
             <!-- Numeri e operazioni base -->
-            <Button android:id="@+id/t7" android:text="7" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t8" android:text="8" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t9" android:text="9" android:layout_margin="1dp"/>
-            <Button android:id="@+id/divisione" android:text="÷" android:layout_margin="1dp"/>
-            <Button android:id="@+id/moltiplicazione" android:text="×" android:layout_margin="1dp"/>
-            <Button android:id="@+id/meno" android:text="-" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t7" android:text="7" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t8" android:text="8" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t9" android:text="9" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/divisione" android:text="÷" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/moltiplicazione" android:text="×" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/meno" android:text="-" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
 
-            <Button android:id="@+id/t4" android:text="4" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t5" android:text="5" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t6" android:text="6" android:layout_margin="1dp"/>
-            <Button android:id="@+id/piu" android:text="+" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t1" android:text="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t2" android:text="2" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t4" android:text="4" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t5" android:text="5" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t6" android:text="6" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/piu" android:text="+" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t1" android:text="1" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t2" android:text="2" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
 
-            <Button android:id="@+id/t3" android:text="3" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t0" android:text="0" android:layout_margin="1dp"/>
-            <Button android:id="@+id/punto" android:text="." android:layout_margin="1dp"/>
-            <Button android:id="@+id/uguale" android:text="=" android:layout_margin="1dp" android:layout_columnSpan="3" android:layout_gravity="fill_horizontal"/>
+            <Button android:id="@+id/t3" android:text="3" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/t0" android:text="0" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/punto" android:text="." android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <Button android:id="@+id/uguale" android:text="=" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnSpan="3" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp" android:layout_gravity="fill_horizontal"/>
 
         </GridLayout>
     </LinearLayout>
