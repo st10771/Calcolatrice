@@ -25,20 +25,22 @@ public class MainActivity extends AppCompatActivity {
         // Listener per i numeri
         View.OnClickListener numberListener = v -> {
             Button b = (Button) v;
+            String text = b.getText().toString();
+            
             if (isNewOp) {
-                currentInput = b.getText().toString();
+                currentInput = text;
                 isNewOp = false;
             } else {
                 if (currentInput.equals("0")) {
-                    currentInput = b.getText().toString();
+                    currentInput = text;
                 } else {
-                    currentInput += b.getText().toString();
+                    currentInput += text;
                 }
             }
             updateDisplay();
         };
 
-        // Assegnazione listener ai pulsanti numerici (comuni a entrambi i layout)
+        // Assegnazione listener ai pulsanti numerici
         int[] numberIds = {R.id.t0, R.id.t1, R.id.t2, R.id.t3, R.id.t4, R.id.t5, R.id.t6, R.id.t7, R.id.t8, R.id.t9};
         for (int id : numberIds) {
             View btn = findViewById(id);
@@ -62,13 +64,15 @@ public class MainActivity extends AppCompatActivity {
         // Operazioni base
         View.OnClickListener operatorListener = v -> {
             Button b = (Button) v;
-            if (!currentInput.isEmpty() || !Double.isNaN(firstValue)) {
-                if (!currentInput.isEmpty()) {
-                    calculate();
-                }
-                operator = b.getText().toString();
+            String op = b.getText().toString();
+            
+            if (!currentInput.isEmpty()) {
+                calculate();
                 firstValue = Double.parseDouble(display.getText().toString());
+                operator = op;
                 isNewOp = true;
+            } else if (!Double.isNaN(firstValue)) {
+                operator = op;
             }
         };
 
@@ -82,9 +86,12 @@ public class MainActivity extends AppCompatActivity {
         View uguale = findViewById(R.id.uguale);
         if (uguale != null) {
             uguale.setOnClickListener(v -> {
-                calculate();
-                operator = "";
-                isNewOp = true;
+                if (!currentInput.isEmpty() && !Double.isNaN(firstValue)) {
+                    calculate();
+                    operator = "";
+                    firstValue = Double.NaN;
+                    isNewOp = true;
+                }
             });
         }
 
@@ -116,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     display.setText("Errore");
                 }
                 isNewOp = true;
+                currentInput = display.getText().toString();
             });
         }
 
@@ -130,16 +138,19 @@ public class MainActivity extends AppCompatActivity {
                     display.setText("Errore");
                 }
                 isNewOp = true;
+                currentInput = display.getText().toString();
             });
         }
 
-        // Potenza (x^y) - trattata come operatore binario
+        // Potenza (x^y)
         View potenza = findViewById(R.id.potenza);
         if (potenza != null) {
             potenza.setOnClickListener(v -> {
-                if (!currentInput.isEmpty()) calculate();
+                if (!currentInput.isEmpty()) {
+                    calculate();
+                    firstValue = Double.parseDouble(display.getText().toString());
+                }
                 operator = "x^y";
-                firstValue = Double.parseDouble(display.getText().toString());
                 isNewOp = true;
             });
         }
@@ -155,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
                     display.setText("Errore");
                 }
                 isNewOp = true;
+                currentInput = display.getText().toString();
             });
         }
 
@@ -171,12 +183,17 @@ public class MainActivity extends AppCompatActivity {
                     display.setText("Errore");
                 }
                 isNewOp = true;
+                currentInput = display.getText().toString();
             });
         }
     }
 
     private void updateDisplay() {
-        display.setText(currentInput.isEmpty() ? "0" : currentInput);
+        if (currentInput.isEmpty()) {
+            display.setText("0");
+        } else {
+            display.setText(currentInput);
+        }
     }
 
     private void calculate() {
@@ -200,11 +217,11 @@ public class MainActivity extends AppCompatActivity {
             if (error) {
                 display.setText("Errore");
                 firstValue = Double.NaN;
+                currentInput = "";
             } else {
                 displayResult(result);
-                firstValue = result;
+                currentInput = display.getText().toString();
             }
-            currentInput = "";
         }
     }
 
