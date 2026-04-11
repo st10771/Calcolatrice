@@ -9,6 +9,7 @@
     android:gravity="center"
     android:padding="8dp">
 
+    <!-- Parte Sinistra: Immagine -->
     <ImageView
         android:id="@+id/imgLandscape"
         android:layout_width="0dp"
@@ -19,6 +20,7 @@
         android:scaleType="fitCenter"
         tools:srcCompat="@drawable/olimpia_coppa" />
 
+    <!-- Parte Destra: Display e Tastiera -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -26,7 +28,7 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <!-- Display adattabile -->
+        <!-- Display -->
         <TextView
             android:id="@+id/display"
             android:layout_width="match_parent"
@@ -42,43 +44,68 @@
             android:maxLines="1"
             android:ellipsize="end" />
 
-        <GridLayout
+        <!-- Tastiera Divisa -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="8"
+            android:orientation="horizontal"
             android:background="#051E5D"
-            android:padding="2dp"
-            android:columnCount="6">
+            android:padding="4dp">
 
-            <!-- Funzioni scientifiche -->
-            <Button android:id="@+id/log10" android:text="log10" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/potenza" android:text="x^y" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/radice" android:text="√" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/reciproco" android:text="1/x" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/fattoriale" android:text="x!" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/cancella" android:text="C" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <!-- Sotto-parte 1: Operazioni Scientifiche e Funzioni -->
+            <GridLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:columnCount="2">
+                
+                <Button android:id="@+id/log10" android:text="log10" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/potenza" android:text="x^y" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/radice" android:text="√" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/reciproco" android:text="1/x" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/fattoriale" android:text="x!" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/cancella" android:text="C" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            </GridLayout>
 
-            <!-- Numeri e operazioni base -->
-            <Button android:id="@+id/t7" android:text="7" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t8" android:text="8" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t9" android:text="9" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/divisione" android:text="÷" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/moltiplicazione" android:text="×" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/meno" android:text="-" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <!-- Sotto-parte 2: Tastierino Numerico -->
+            <GridLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:columnCount="3">
+                
+                <Button android:id="@+id/t7" android:text="7" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/t8" android:text="8" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/t9" android:text="9" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                
+                <Button android:id="@+id/t4" android:text="4" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/t5" android:text="5" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/t6" android:text="6" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                
+                <Button android:id="@+id/t1" android:text="1" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/t2" android:text="2" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/t3" android:text="3" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                
+                <Button android:id="@+id/t0" android:text="0" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/punto" android:text="." android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/uguale" android:text="=" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            </GridLayout>
 
-            <Button android:id="@+id/t4" android:text="4" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t5" android:text="5" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t6" android:text="6" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/piu" android:text="+" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t1" android:text="1" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t2" android:text="2" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            <!-- Sotto-parte 3: Operazioni Base -->
+            <GridLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:columnCount="1">
+                
+                <Button android:id="@+id/divisione" android:text="÷" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/moltiplicazione" android:text="×" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/meno" android:text="-" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+                <Button android:id="@+id/piu" android:text="+" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
+            </GridLayout>
 
-            <Button android:id="@+id/t3" android:text="3" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/t0" android:text="0" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/punto" android:text="." android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp"/>
-            <Button android:id="@+id/uguale" android:text="=" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnSpan="3" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="1dp" android:layout_gravity="fill_horizontal"/>
-
-        </GridLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
